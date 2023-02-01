@@ -1,0 +1,109 @@
+@import './variables.scss';
+@import './mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+html {
+	scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	background-color: $bg-color;
+	color: $color-white;
+	line-height: 1.7;
+	background-image: url(../assets/bg-texture.png);
+}
+
+.container {
+	width: $container-width-lg;
+	margin: 0 auto;
+
+	@include for-small-desktop {
+		width: $container-width-md;
+	}
+	
+	@include for-tablet {
+		width: $container-width-sm;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+section {
+	margin-top: 8rem;
+
+	@include for-small-desktop {
+		margin-top: 6rem;
+	}
+}
+
+section > h2,
+section > h5 {
+	text-align: center;
+	color: $color-light;
+}
+
+section > h2 {
+	color: $primary-color;
+	margin-bottom: 3rem;
+
+	@include for-tablet {
+		margin-bottom: 2rem;
+	}
+}
+
+.text-light {
+	color: $color-light;
+}
+
+a {
+	color: $primary-color;
+	transition: $transition-variable;
+}
+
+a:hover {
+	color: $color-white;
+}
+
+.btn {
+	width: max-content;
+	display: inline-block;
+	color: $primary-color;
+	padding: 0.75rem 1.2rem;
+	cursor: pointer;
+	border-radius: 0.4rem;
+	border: 1px solid $primary-color;
+	transition: $transition-variable;
+}
+
+.btn:hover {
+	background-color: $color-white;
+	color: $bg-color;
+	border-color: transparent;
+}
+
+.btn-primary {
+	background-color: $primary-color;
+	color: $bg-color;
+}
+
+img {
+	display: block;
+	width: 100%;
+	object-fit: cover;
+}
